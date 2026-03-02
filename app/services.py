@@ -43,5 +43,13 @@ def calculate_skill_match(resume_keywords, jd_keywords):
     return matched, missing, round(keyword_score, 2)
 
 def calculate_final_score(semantic_score, keyword_score):
-    final_score = (0.6 * semantic_score) + (0.4 * keyword_score)
+
+    base = keyword_score
+    bonus = 0.3 * semantic_score
+
+    final_score = base + bonus
+
+    if final_score > 100:
+        final_score = 100
+
     return round(final_score, 2)
