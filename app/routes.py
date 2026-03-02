@@ -66,7 +66,7 @@ async def rank_resumes(
 
         similarity_score = compute_similarity(resume_text, job_description)
 
-        matched, missing, keyword_score = calculate_skill_match(
+        keyword_score = calculate_skill_match(
             resume_keywords, jd_keywords
         )
 
